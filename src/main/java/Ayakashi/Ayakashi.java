@@ -38,7 +38,6 @@ public enum Ayakashi {
                 new ClearChatCommand(),
                 new HudCommand(),
                 new ProtocolsCommand(),
-                new MuteIRCCommand(),
                 new RpcCommand());
         this.crashManager = new CrashManager(
                 new CrashYokai1(),
@@ -50,23 +49,13 @@ public enum Ayakashi {
                 new CrashMare1(),
                 new CrashMare2(),
                 new CrashMare3(),
-                new CrashSpirit1(),
-                new CrashSpirit2(),
-                new CrashSpirit3(),
-                new CrashSpirit4(),
-                new CrashSpirit5(),
-                new CrashUbume1(),
-                new CrashUbume2(),
-                new CrashUbume3(),
-                new CrashObake1(),
-                new CrashObake2(),
+                new CrashHantu1(),
+                new CrashHantu2(),
                 new CrashTengu1(),
                 new CrashTengu2(),
                 new CrashTengu3(),
-                new CrashTengu4(),
-                new CrashTengu5(),
-                new CrashTengu6(),
-                new CrashTengu7());
+                new CrashMyling1(),
+                new CrashMyling2());
         ViaMCP.getInstance().start();
         new FBP();
         new MemoryHelper().run();

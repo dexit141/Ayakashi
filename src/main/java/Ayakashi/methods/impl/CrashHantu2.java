@@ -10,13 +10,13 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.client.C03PacketPlayer;
 
 @CrashInfo(
-        name = "spirit4"
+        name = "hantu2"
 )
-public class CrashSpirit4 extends Crash {
+public class CrashHantu2 extends Crash {
     public void execute(Object... args) {
         int packets = (Integer) args[0];
         long start = System.currentTimeMillis();
-        NotificationManager.show(new Notification(NotificationType.INFO, ChatHelper.fix("&4Ayakashi"), "Spirit method started!", 4));
+        NotificationManager.show(new Notification(NotificationType.INFO, ChatHelper.fix("&4Ayakashi"), "Hantu method started!", 4));
         ChatHelper.sendMessage(String.format("Sending packets &8(&f%s&8) &8[&f%s&8]", this.getName().toUpperCase(), args[0]));
 
         (new Thread(() -> {

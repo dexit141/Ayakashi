@@ -168,7 +168,7 @@ public class GuiOptions extends GuiScreen implements GuiYesNoCallback {
             }
             if (button.id == 8675309) {
                 try {
-                    URI uri = new URI("https://discord.gg/CW7sN5bqn5");
+                    URI uri = new URI("https://avarioncode.eu/");
                     Desktop.getDesktop().browse(uri);
                 } catch (Exception var3) {
                     var3.printStackTrace();
