@@ -22,7 +22,10 @@ Ayakashi is free open-source crash client for Minecraft
 
 - Fixmem for crash methods
 
-# Build
+# Build & Run
 
 - Maven > Lifecycle > deploy
 - move Ayakashi-1.0-SNAPSHOT.jar to ```%appdata%/.minecraft/versions```
+- change the name from Ayakashi-1.0-SNAPSHOT.jar to Ayakashi.jar
+- create json file (you can use from release
+- run Ayakashi from launcher
