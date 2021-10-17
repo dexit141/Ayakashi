@@ -71,11 +71,13 @@ public enum Ayakashi {
         OpenGlHelper.setWindowIcon("https://i.imgur.com/tsb5f3N.png", "https://i.imgur.com/DVNhGaK.png");
 
         File folder = new File("data");
-        File[] listOfFiles = folder.listFiles();
+        if (!folder.exists()) folder.mkdir();
 
+        File[] listOfFiles = folder.listFiles();
         for (int i = 0; i < Objects.requireNonNull(listOfFiles).length; i++) {
             AdvancedCrashCommand.methods.add(listOfFiles[i].getName());
         }
+        
     }
 
     public CommandManager getCommandManager() {
