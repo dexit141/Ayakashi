@@ -28,9 +28,13 @@ public class MethodsCommand extends Command {
         ChatHelper.sendMessage("", false);
         ChatHelper.sendMessage("&lHANTU1 &8-> &f1.9-1.17.1 PositionCrasher &8(&f2-5&8)", true);
         ChatHelper.sendMessage("&lHANTU2 &8-> &f1.9-1.17.1 PositionCrasher &8(&f2-5&8)" , true);
+        ChatHelper.sendMessage("&lHANTU3 &8-> &f1.9-1.17.1 PositionCrasher &8(&f2-5&8)", true);
+        ChatHelper.sendMessage("&lHANTU4 &8-> &f1.9-1.17.1 PositionCrasher &8(&f2-5&8)" , true);
+        ChatHelper.sendMessage("&lHANTU5 &8-> &f1.9-1.17.1 PositionCrasher &8(&f2-5&8)" , true);
         ChatHelper.sendMessage("", false);
         ChatHelper.sendMessage("&lMYLING1 &8-> &fADVANCED BYPASS &8(&f1-50&8)", true);
         ChatHelper.sendMessage("&lMYLING2 &8-> &fADVANCED BYPASS &8(&f1-50&8)", true);
+        ChatHelper.sendMessage("&lMYLING3 &8-> &fADVANCED BYPASS &8(&f1-50&8)", true);
         ChatHelper.sendMessage("", false);
         ChatHelper.sendMessage("&lTENGU1 &8-> &fULTIMATE BYPASS &8(&f1-10&8)", true);
         ChatHelper.sendMessage("&lTENGU2 &8-> &fULTIMATE BYPASS &8(&f1-10&8)", true);

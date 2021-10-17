@@ -1,7 +1,6 @@
 package Ayakashi;
 
 import Ayakashi.command.impl.*;
-import Ayakashi.helpers.MemoryHelper;
 import Ayakashi.helpers.OpenGlHelper;
 import Ayakashi.managers.CommandManager;
 import Ayakashi.managers.CrashManager;
@@ -11,6 +10,7 @@ import Ayakashi.mods.crashitems.TabArmor;
 import Ayakashi.mods.crashitems.TabExploits;
 import Ayakashi.mods.crashitems.TabSword;
 import Ayakashi.mods.viamcp.ViaMCP;
+import net.arikia.dev.drpc.DiscordRPC;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.Display;
 
@@ -51,20 +51,19 @@ public enum Ayakashi {
                 new CrashMare3(),
                 new CrashHantu1(),
                 new CrashHantu2(),
+                new CrashHantu3(),
+                new CrashHantu4(),
+                new CrashHantu5(),
                 new CrashTengu1(),
                 new CrashTengu2(),
                 new CrashTengu3(),
+                new CrashTeke1(),
+                new CrashTeke2(),
                 new CrashMyling1(),
-                new CrashMyling2());
-        ViaMCP.getInstance().start();
-        new FBP();
-        new MemoryHelper().run();
-        FBP.INSTANCE.onStart();
-        new TabArmor();
-        new TabExploits();
-        new TabSword();
-        Minecraft.getMinecraft().gameSettings.gammaSetting += 9999.0F;
-        Minecraft.getMinecraft().gameSettings.ofFastRender = true;
+                new CrashMyling2(),
+                new CrashMyling3(),
+                new CrashMyling3());
+        initialize();
     }
 
     public void setDisplay() throws IOException {
@@ -85,5 +84,20 @@ public enum Ayakashi {
 
     public CrashManager getExploitManager() {
         return this.crashManager;
+    }
+
+    public void initialize() {
+        Minecraft.getMinecraft().gameSettings.gammaSetting += 9999.0F;
+        Minecraft.getMinecraft().gameSettings.ofFastRender = true;
+        ViaMCP.getInstance().start();
+        new FBP();
+        FBP.INSTANCE.onStart();
+        new TabArmor();
+        new TabExploits();
+        new TabSword();
+    }
+
+    public void terminate() {
+        DiscordRPC.discordShutdown();
     }
 }

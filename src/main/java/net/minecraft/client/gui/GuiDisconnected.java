@@ -1,5 +1,9 @@
 package net.minecraft.client.gui;
 
+import Ayakashi.helpers.MainMenuHelper;
+import Ayakashi.mods.hook.GuiInGameHook;
+import net.minecraft.client.multiplayer.GuiConnecting;
+import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.IChatComponent;
 
@@ -34,7 +38,8 @@ public class GuiDisconnected extends GuiScreen {
         this.buttonList.clear();
         this.multilineMessage = this.fontRendererObj.listFormattedStringToWidth(this.message.getFormattedText(), width - 50);
         this.field_175353_i = this.multilineMessage.size() * this.fontRendererObj.FONT_HEIGHT;
-        this.buttonList.add(new GuiButton(0, width / 2 - 100, height / 2 + this.field_175353_i / 2 + this.fontRendererObj.FONT_HEIGHT, I18n.format("gui.toMenu")));
+        this.buttonList.add(new GuiButton(0, width / 2 - 100, height / 2 + this.field_175353_i / 2 + this.fontRendererObj.FONT_HEIGHT + 30, I18n.format("gui.toMenu")));
+        this.buttonList.add(new GuiButton(1, width / 2 - 100, height / 2 + this.field_175353_i  + this.fontRendererObj.FONT_HEIGHT, "Reconnect"));
     }
 
     /**
@@ -43,6 +48,10 @@ public class GuiDisconnected extends GuiScreen {
     protected void actionPerformed(GuiButton button) throws IOException {
         if (button.id == 0) {
             this.mc.displayGuiScreen(this.parentScreen);
+        }
+        else if (button.id == 1) {
+            ServerData serverData = GuiInGameHook.actualServer;
+            this.mc.displayGuiScreen(new GuiConnecting(new GuiMultiplayer(new MainMenuHelper()), this.mc, serverData));
         }
     }
 

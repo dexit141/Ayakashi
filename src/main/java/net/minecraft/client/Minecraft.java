@@ -373,22 +373,6 @@ public class Minecraft implements IThreadListener, IPlayerUsage {
 
     }
 
-    public static String getHWID() throws NoSuchAlgorithmException {
-        StringBuilder s = new StringBuilder();
-        String main = System.getenv("PROCESSOR_IDENTIFIER") + System.getenv("COMPUTERNAME") + System.getProperty("user.name").trim();
-        byte[] bytes = main.getBytes(StandardCharsets.UTF_8);
-        MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-        byte[] md5 = messageDigest.digest(bytes);
-        int i = 0;
-        for (byte b : md5) {
-            s.append(Integer.toHexString(b & 0xFF | 0x300), 0, 3);
-            if (i != md5.length - 1)
-                s.append("-");
-            i++;
-        }
-        return s.toString();
-    }
-
 
     private void startGame() throws LWJGLException, IOException {
         this.gameSettings = new GameSettings(this, this.mcDataDir);
@@ -770,9 +754,9 @@ public class Minecraft implements IThreadListener, IPlayerUsage {
         try {
             try {
                 this.loadWorld(null);
+                Ayakashi.INSTANCE.terminate();
             } catch (Throwable ignored) {
             }
-
             this.mcSoundHandler.unloadSounds();
         } finally {
             Display.destroy();
@@ -781,7 +765,6 @@ public class Minecraft implements IThreadListener, IPlayerUsage {
             }
 
         }
-
         System.gc();
     }
 

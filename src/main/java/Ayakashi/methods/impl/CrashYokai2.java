@@ -44,9 +44,6 @@ public class CrashYokai2 extends Crash {
                     }
                     value.append("text:\uFF21}");
                     list.appendTag(new NBTTagString(value.toString()));
-                    tag.setString("author", Minecraft.getMinecraft().getSession().getUsername());
-                    tag.setString("title", "Ayakashi");
-                    tag.setByte("resolved", (byte) 1);
                     tag.setTag("pages", list);
                     ItemStack book = new ItemStack(Items.writable_book);
                     book.setTagCompound(tag);

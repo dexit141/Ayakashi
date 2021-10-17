@@ -7,16 +7,13 @@ import Ayakashi.helpers.ChatHelper;
 
 @CommandInfo(
         alias = "hud",
-        usage = ",hud <none/tps/fps>",
+        usage = ",hud",
         aliases = {"ui", "gui"}
 )
 public class HudCommand extends Command {
     public static Boolean hud = true;
 
-    public static Boolean tps = true;
-    public static Boolean fps = true;
-
-    public static boolean isHud() {
+    public static boolean showHud() {
         return hud;
     }
 
@@ -25,20 +22,7 @@ public class HudCommand extends Command {
     }
 
     public void execute(String... args) throws CommandException {
-        if (args.length == 1) {
-            if (args[0].equalsIgnoreCase("tps")) {
-                ChatHelper.sendMessage(String.format("Tps has been &f%s&7!", !isHud() ? "enabled" : "disabled"));
-                tps = !tps;
-            } else if (args[0].equalsIgnoreCase("fps")) {
-                ChatHelper.sendMessage(String.format("Fps has been &f%s&7!", !isHud() ? "enabled" : "disabled"));
-                fps = !fps;
-            } else {
-                ChatHelper.sendMessage(String.format("Hud has been &f%s&7!", !isHud() ? "enabled" : "disabled"));
-                this.setHud(!isHud());
-            }
-        } else {
-            ChatHelper.sendMessage(String.format("Hud has been &f%s&7!", !isHud() ? "enabled" : "disabled"));
-            this.setHud(!isHud());
-        }
+        ChatHelper.sendMessage(String.format("Hud has been &f%s&7!", !showHud() ? "enabled" : "disabled"));
+        this.setHud(!showHud());
     }
 }

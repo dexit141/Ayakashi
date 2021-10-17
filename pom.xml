@@ -88,6 +88,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.ibm.icu</groupId>
+            <artifactId>icu4j</artifactId>
+            <version>68.2</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.l33tlabs.twl</groupId>
             <artifactId>pngdecoder</artifactId>
             <version>1.0</version>
@@ -151,12 +157,6 @@
             <artifactId>httpcore</artifactId>
             <groupId>org.apache.httpcomponents</groupId>
             <version>4.4.14</version>
-        </dependency>
-
-        <dependency>
-            <artifactId>icu4j</artifactId>
-            <groupId>com.ibm.icu</groupId>
-            <version>68.2</version>
         </dependency>
 
         <dependency>

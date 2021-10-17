@@ -5,7 +5,6 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.multiplayer.GuiConnecting;
 import net.minecraft.client.multiplayer.ServerData;
-import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.util.Session;
 
 import java.io.IOException;

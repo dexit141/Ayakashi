@@ -34,8 +34,6 @@ public class CrashShade2 extends Crash {
                     NBTTagString tString = new NBTTagString(size);
                     list.appendTag(tString);
                 }
-                tag.setString("author", Minecraft.getMinecraft().getSession().getUsername());
-                tag.setString("title", "Ayakashi");
                 tag.setTag("pages", list);
                 if (book.hasTagCompound()) {
                     NBTTagCompound tagb = book.getTagCompound();
