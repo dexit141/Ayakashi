@@ -2,7 +2,7 @@
 Ayakashi is free open-source crash client for Minecraft
 
 # Features:
-- Multiversion 1.8 - 1.16.5
+- Multiversion 1.8 - 1.17.1
 - Methods which can bypass AntiCrashers like SpigotGuard, ExploitFixer, etc.
 - AdvancedCrash system (You can create your own methods)
 - Some useful commands (like fake gamemode)
